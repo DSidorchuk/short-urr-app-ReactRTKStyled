@@ -8,6 +8,11 @@ import {ReactComponent as Ig} from "../assets/icons/icon-instagram.svg";
 const IconsFlex = styled.div`
    display: flex;
    justify-content: space-between;
+
+   @media(max-width: 375px) {
+      justify-content: center;
+      gap: 20px;
+   }
 `;
 
 const IconWrapper = styled.div`

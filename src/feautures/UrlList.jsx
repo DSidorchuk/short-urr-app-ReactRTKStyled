@@ -10,6 +10,12 @@ const UrlGrid = styled.div`
    display: grid;
    grid-auto-rows: 75px;
    row-gap: 15px;
+
+   @media (max-width: 375px){
+      grid-auto-rows: 152px;
+      row-gap: 25px;
+      width: 100%;
+   }
 `;
 
 const UrlList = () => {

@@ -11,11 +11,13 @@
   --light-text-color: hsl(257, 7%, 63%);
   --section-bg-color: hsl(230, 25%, 95%);
   --footer-bg-color: hsl(255, 11%, 17%);
+  --burger-bg-color: hsl(257, 7%, 60%);
 
   --btn-cyan-hover-color: hsl(180, 66%, 75%);
 
   --radii: 80px;
   --rect-radii: 12px;
+  --mob-input-radii: 9px;
 }
 
 * {
@@ -27,18 +29,32 @@ body {
   margin: 0 auto;
   --fs-url: 18px;
   --fs-lg-title: 70px;
+  --fs-mob-lg-title: 40px;
   --fs-sm-title: 36px;
+  --fs-mob-sm-title: 29px;
   --fs-lg-subtitle: 24px;
+  --fs-mob-lg-subtitle: 17px;
   --fs-sm-subtitle: 18px;
+  --fs-mob-sm-subtitle: 17px;
   --fs-lg-btn: 18px;
   --fs-sm-btn: 16px;
   --fs-title-descr: 22px;
   --fs-descr: 18px;
+  --fs-mob-descr: 16px;
   --fs-title-link: 18px;
+  --fs-mob-title-link: 15px;
   --fs-link: 18px;
+  --fs-mob-link: 16px;
+  --fs-mob-footer-link: 14px;
   --fs-input: 20px;
+  --fs-mob-input: 17px;
   --fs-input-error: 16px;
+  --fs-mob-input-error: 12px;
+  --fs-mob-boost-title: 26px;
+
   --input-height: 65px;
+  --input-mob-height: 45px;
+  --mob-content-width: 325px;
 }
 @media (max-width: 375px) {
   body {

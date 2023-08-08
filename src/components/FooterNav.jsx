@@ -5,6 +5,13 @@ const NavGrid = styled.nav`
    display: grid;
    grid-template-columns: repeat(3, 140px);
    column-gap: 70px;
+
+   @media(max-width: 375px){
+      grid-template-columns: unset;
+      grid-template-rows: repeat(3, 150px);
+      justify-content: center;
+      row-gap: 17px;
+   }
 `;
 
 const NavGridTrack = styled.div`
@@ -13,16 +20,25 @@ const NavGridTrack = styled.div`
 
 const Title = styled.h5`
    margin: 0;
-   font-weight: 700;
-   font-size: var(--fs-title-link);
    text-align: left;
+   font-size: var(--fs-title-link);
+   font-weight: 700;
    color: #ffff;
+
+   @media(max-width: 375px){
+      text-align: center;
+      font-size: var(--fs-mob-title-link);
+   }
 `;
 
 const UrlList = styled.ul`
    margin-top: 25px;
-   list-style-type: none;
    padding: 0;
+   list-style-type: none;
+
+   @media(max-width: 375px){
+      margin-top: 17px;
+   }
 `;
 
 const UrlWrapper = styled.li`
@@ -33,11 +49,19 @@ const UrlWrapper = styled.li`
 
    & > a {
       text-decoration: none;
-      color: var(--light-text-color);
       font-size: var(--fs-link);
+      color: var(--light-text-color);
 
       &: hover {
          color: var(--main-cyan-color);
+      }
+   }
+
+   @media(max-width: 375px){
+      text-align: center;
+      line-height: 28px;
+      & > a {
+         font-size: var(--fs-mob-footer-link);
       }
    }
 `;

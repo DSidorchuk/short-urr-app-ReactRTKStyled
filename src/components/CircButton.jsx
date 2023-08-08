@@ -10,8 +10,8 @@ const Button = styled.button`
 
    & > a {
       text-decoration: none;
-      color: #ffff;
       font-weight: 700;
+      color: #ffff;
    }
    &: hover {
       background-color: var(--btn-cyan-hover-color);

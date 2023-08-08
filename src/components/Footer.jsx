@@ -7,15 +7,25 @@ import { SocialMedia } from "./SocialMedia";
 
 
 const FooterWrapper = styled.footer`
-   background-color: var(--footer-bg-color);
-   min-height: 260px;
    padding-top: 70px;
+   min-height: 260px;
+   background-color: var(--footer-bg-color);
+
+   @media(max-width: 375px){
+      padding-top: 50px;
+   }
 `;
 
 const FooterGrid = styled.div`
    display: grid;
    grid-template-columns: 340px 540px 200px;
    column-gap: 80px;
+
+   @media(max-width: 375px){
+      grid-template-columns: unset;
+      grid-template-rows: 50px 485px 60px;
+      row-gap: 40px;
+   }
 `;
 
 
@@ -24,7 +34,11 @@ const Footer = () => {
       <FooterWrapper>
          <Container>
             <FooterGrid>
-               <Logo light={true} position={'flex-start'}/>
+               <Logo 
+                  light={true} 
+                  yPos={'flex-start'}
+                  xPos={'center'}
+               />
                <FooterNav/>
                <SocialMedia/>
             </FooterGrid>

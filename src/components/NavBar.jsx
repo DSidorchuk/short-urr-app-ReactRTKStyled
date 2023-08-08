@@ -11,12 +11,12 @@ const NavBarWrapper = styled.nav`
 `;
 
 const NavBarLinkContainer = styled.ul`
-   width: 100%;
-   display: flex;
-   justify-content: space-around;
-   list-style-type: none;
    margin: 0;
    padding: 0;
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   list-style-type: none;
 `;
 
 const NavBar = () => {

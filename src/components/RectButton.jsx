@@ -20,8 +20,8 @@ const ButtonLg = styled(Button)`
    width: 210px;
    height: var(--input-height);
    font-size: var(--fs-input);
-   color: #ffff;
    font-weight: 700;
+   color: #ffff;
 
    &: hover {
       background-color: var(--btn-cyan-hover-color);

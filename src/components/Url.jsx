@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 import { CopyButton } from "../components/CopyButton";
 import { FullUrl } from "../components/FullUrl";
@@ -10,23 +11,42 @@ const UrlWrapper = styled.div`
    display: grid;
    grid-template-columns: 650px 360px 140px;
    column-gap: 15px;
-   background-color: #ffff;
    border-radius: 5px;
+   background-color: #ffff;
+
+   @media (max-width: 375px){
+      padding: 5px 17px 17px 17px;
+      position: relative;
+      grid-template-columns: unset;
+      grid-template-rows: 40px repeat(2, 45px);
+   }
 `;
 
 const ButtonWrapper = styled.div`
-   width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
+   width: 100%;
+`;
+
+const MobileDivider = styled.div`
+   position: absolute;
+   top: 43px;
+   width: 325px;
+   height: 1px;
+   opacity: 0.4;
+   background-color: var(--light-text-color);
 `;
 
 
 const Url = ({id, fullUrl, shortUrl, handleCopy, active}) => { 
+   const isMobile = useMediaQuery({maxWidth: 375});
+
    return (
       <UrlWrapper>
          <FullUrl>{fullUrl}</FullUrl>
          <ShortUrl>{shortUrl}</ShortUrl>
+         {isMobile && <MobileDivider/>}
          <ButtonWrapper>
             <CopyButton 
                onClick={() => handleCopy(shortUrl, id)}

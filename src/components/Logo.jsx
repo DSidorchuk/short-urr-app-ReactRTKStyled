@@ -4,16 +4,16 @@ import {ReactComponent as Image} from '../assets/logo.svg';
 
 
 const LogoWrapper = styled.div`
+   display: flex;
+   justify-content: ${props => props.xPos ? props.xPos : 'start'};
+   align-items: ${props => props.yPos ? props.yPos : 'center'};
    width: 100%;
    height: 100%;
-   display: flex;
-   justify-content: start;
-   align-items: ${props => props.position ? props.position : 'center'};
 `;
 
-const Logo = ({light, position}) => {
+const Logo = ({light, yPos, xPos}) => {
    return (
-      <LogoWrapper position={position}>
+      <LogoWrapper yPos={yPos} xPos={xPos}>
          <Link to="/">
             {light ? <Image fill='#ffff'/> : <Image />}
          </Link>

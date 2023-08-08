@@ -10,13 +10,19 @@ const Grid = styled.div`
    grid-template-columns: repeat(3, 390px);
    column-gap: 35px;
    justify-content: center;
+
+   @media(max-width: 375px){
+      grid-template-columns: unset;
+      grid-template-rows: repeat(3, 270px);
+      row-gap: 90px;
+   }
 `;
 
 const BoxWrapper = styled.div`
-   height: 370px; //340px
+   position: relative;
    display: flex;
    align-items: center;
-   position: relative;
+   height: 370px;
 
    &:nth-child(1) {
       align-items: flex-start;
@@ -32,41 +38,78 @@ const BoxWrapper = styled.div`
    }
    &:before {
       content: '';
-      display: block;
-      width: 35px;
-      height: 10px;
-      background-color: var(--main-cyan-color);
       position: absolute;
       left: -35px;
       top: 43%;
-   }
-   &:after {
-      content: '';
       display: block;
       width: 35px;
       height: 10px;
       background-color: var(--main-cyan-color);
+   }
+   &:after {
+      content: '';
       position: absolute;
       right: -35px;
       top: 43%;
+      display: block;
+      width: 35px;
+      height: 10px;
+      background-color: var(--main-cyan-color);
    }
+
+   @media(max-width: 375px){
+      height: 270px;
+      &:before {
+         content: '';
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         top: -95px;
+         display: block;
+         width: 10px;
+         height: 53px;
+         background-color: var(--main-cyan-color);
+      }
+      &:after {
+         content: '';
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         top: unset;
+         bottom: -50px;
+         display: block;
+         width: 10px;
+         height: 52px;
+         background-color: var(--main-cyan-color);
+      }
+   }
+   
 `;
 
 const InfoBox = styled.div`
+   padding: 50px 30px 20px 30px;
    position: relative;
    height: 200px; // 185
-   padding: 50px 30px 20px 30px;
    background-color: #ffff;
    :after {
       display: none;
+   }
+
+   @media(max-width: 375px) {
+      padding: 50px 15px 15px 30px;
+      height: 200px;
    }
 `;
 
 const BoxTitle = styled.h4`
    margin: 20px 0;
    text-align: left;
-   font-weight: 700;
    font-size: var(--fs-title-descr);
+   font-weight: 700;
+
+   @media(max-width: 375px) {
+      text-align: center;
+   }
 `;
 
 const BoxDescr = styled.div`
@@ -74,24 +117,34 @@ const BoxDescr = styled.div`
    font-size: var(--fs-descr);
    color: var(--light-text-color);
    line-height: 25px;
+
+   @media(max-width: 375px) {
+      text-align: center;
+      font-size: var(--fs-mob-descr);
+   }
 `;
 
 const IconWrapper = styled.div`
-   display: flex;
-   justify-content: center;
-   align-items: center;
    position: absolute;
    top: 0;
    transform: translateY(-50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 90px;
    height: 90px;
-   background-color: var(--main-violet-color);
    border-radius: 100%;
+   background-color: var(--main-violet-color);
+   
+   @media(max-width: 375px) {
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+   }
 `;
 
 const Icon = styled.img`
-   display: block;
    margin: 0 auto;
+   display: block;
 `;
 
 const AdvanceDescription = () => {

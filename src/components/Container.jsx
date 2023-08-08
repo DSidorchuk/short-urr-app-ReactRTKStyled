@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-   width: 1240px;
-   height: 100%;
-   max-width: 1240px;
    margin: 0 auto;
    padding: 0 2rem;
+   width: 1240px;
+   height: 100%;
 
    @media (max-width: 375px) {
-      max-width: 100%
+      padding: 0 25px;
+      width: 325px;
     }
 `
